@@ -105,6 +105,13 @@ if(!global.gamePaused)
 	}
 }
 
+longBeamTimer += 1;
+
+if !obj_Player.beamIsLong && longBeamTimer > 8
+{
+	instance_destroy();
+}
+
 #endregion
 
 event_inherited();

@@ -114,7 +114,8 @@ beamName = array(
 "ICE BEAM",
 "WAVE BEAM",
 "SPAZER",
-"PLASMA BEAM");
+"PLASMA BEAM",
+"LONG BEAM");
 itemName = array(
 "MISSILE",
 "SUPER MISSILE",
@@ -135,7 +136,8 @@ bootsName = array(
 "SPACE JUMP",
 "ACCEL DASH",
 "SPEED BOOSTER",
-"CHAIN SPARK");
+"CHAIN SPARK",
+"SPIN BOOST");
 
 pauseSurf = surface_create(global.resWidth,global.resHeight);
 
@@ -288,7 +290,7 @@ function DrawInventoryPlayer()
 		{
 			draw_sprite(sprt_Sub_Samus_Grip,min(i,2),xx+30,yy+36);
 		}
-		if(P.boots[Boots.SpaceJump])
+		if(P.boots[Boots.SpaceJump] || P.boots[Boots.SpinBoost])
 		{
 			draw_sprite(sprt_Sub_Samus_Boots1,min(i,2),xx,yy+96);
 		}

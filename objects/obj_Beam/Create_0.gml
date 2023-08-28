@@ -10,6 +10,7 @@ isWave = (string_count("Wave",object_get_name(object_index)) > 0);
 isSpazer = (string_count("Spazer",object_get_name(object_index)) > 0);
 isPlasma = (string_count("Plasma",object_get_name(object_index)) > 0);
 isGrapple = (object_index == obj_GrappleBeamShot);
+isLong = (string_count("Long",object_get_name(object_index)) > 0);
 
 if(string_count("Beam",object_get_name(object_index)) > 0 && (sprite_index == mask_index || !sprite_exists(mask_index)))
 {
@@ -26,6 +27,7 @@ if(string_count("Beam",object_get_name(object_index)) > 0 && (sprite_index == ma
 
 frame = 0;
 frameCounter = 0;
+longBeamTimer = 0;
 
 //isBeam = true;
 type = ProjType.Beam;

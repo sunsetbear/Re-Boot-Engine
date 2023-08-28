@@ -975,6 +975,7 @@ if(!global.gamePaused || (xRayActive && !global.roomTrans && !obj_PauseMenu.paus
 #region Vertical Movement
 	if(grounded)
 	{
+		spinBoost = 1;
 		gunReady = false;
 		ledgeFall = true;
 		ledgeFall2 = true;
@@ -1029,11 +1030,12 @@ if(!global.gamePaused || (xRayActive && !global.roomTrans && !obj_PauseMenu.paus
 			(state != State.Morph || misc[Misc.Spring] || !entity_place_collide(0,-17)) && morphFrame <= 0 && state != State.DmgBoost)
 			{
 				if(grounded || bunnyJump > 0 || (canWallJump && rJump) || speedBoostWJ || (state == State.Grip && (move != dir || climbTarget == 0) && !cDown) || 
-				(boots[Boots.SpaceJump] && velY >= sjThresh && state == State.Somersault && !liquidMovement && rJump))
+				((boots[Boots.SpaceJump] || (boots[Boots.SpinBoost] && spinBoost > 0)) && velY >= sjThresh && state == State.Somersault && !liquidMovement && rJump))
 				{
-					if(!grounded && !canWallJump && !speedBoostWJ && boots[Boots.SpaceJump] && velY >= sjThresh)
+					if(!grounded && !canWallJump && !speedBoostWJ && (boots[Boots.SpaceJump] || (boots[Boots.SpinBoost] && spinBoost > 0)) && velY >= sjThresh)
 					{
 						spaceJump = 8;
+						spinBoost = 0;
 						//frame[Frame.Somersault] = 0;
 					}
 					if((!grounded || grapWJCounter > 0) && ((canWallJump && rJump) || speedBoostWJ))

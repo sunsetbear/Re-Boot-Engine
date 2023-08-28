@@ -612,6 +612,7 @@ bodyFrame = 0;
 legFrame = 0;
 
 spaceJump = 0;
+spinBoost = 0;
 
 recoil = false;
 recoilCounter = 0;
@@ -786,10 +787,12 @@ enum Boots
 	SpaceJump,
 	Dodge,
 	SpeedBoost,
-	ChainSpark
+	ChainSpark,
+	SpinBoost
 };
 // 5 Boots
-boots[4] = false;
+//6 boots now
+boots[5] = false;
 
 enum Misc
 {
@@ -809,10 +812,13 @@ enum Beam
 	Ice,
 	Wave,
 	Spazer,
-	Plasma
+	Plasma,
+	Long
 };
 // 5 Beams
-beam[4] = false;
+//beam[4] = false;
+//test to see if 6 beams?
+beam[5] = false;
 
 enum Item
 {
@@ -934,6 +940,7 @@ beamName[1] = "ICE BEAM";
 beamName[2] = "WAVE BEAM";
 beamName[3] = "SPAZER";
 beamName[4] = "PLASMA BEAM";
+beamName[5] = "LONG BEAM";
 
 itemName[0] = "MISSILE";
 itemName[1] = "SUPER MISSILE";
@@ -2916,6 +2923,7 @@ function Set_Beams()
 	beamFlare = sprt_PowerBeamChargeFlare;
 	
 	beamIsWave = false;
+	beamIsLong = false;
 	beamWaveStyleOffset = 1;
 	
 	var noBeamsActive = ((beam[Beam.Ice]+beam[Beam.Wave]+beam[Beam.Spazer]+beam[Beam.Plasma]) <= 0);
@@ -2923,6 +2931,11 @@ function Set_Beams()
 	if(beam[Beam.Wave] || (noBeamsActive && itemHighlighted[0] == 2))
 	{
 		beamIsWave = true;
+	}
+	
+	if(beam[Beam.Long] || (itemHighlighted[0] == 5))
+	{
+		beamIsLong = true;
 	}
 	
 	if(beam[Beam.Spazer] || (noBeamsActive && itemHighlighted[0] == 3))
