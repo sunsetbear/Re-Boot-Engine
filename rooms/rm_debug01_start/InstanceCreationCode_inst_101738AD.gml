@@ -1,3 +1,3 @@
-nextroom = rm_debug03_Blocks;
+nextroom = rm_BrinstarHall_01;
 doorID = 2;
-nextDoorID = 2;
+nextDoorID = 1;
