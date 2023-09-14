@@ -193,9 +193,9 @@
     {"name":"OtherTextImages","order":1,"path":"folders/Sprites/UI/TextImages/OtherTextImages.yy",},
     {"name":"XBButtonTextImages","order":4,"path":"folders/Sprites/UI/TextImages/XBButtonTextImages.yy",},
     {"name":"Tile Sets","order":4,"path":"folders/Tile Sets.yy",},
-    {"name":"Timelines","order":10,"path":"folders/Timelines.yy",},
     {"name":"Brinstar","order":12,"path":"folders/Tile Sets/Brinstar.yy",},
     {"name":"Unused","order":13,"path":"folders/Tile Sets/Unused.yy",},
+    {"name":"Timelines","order":10,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_PushBall_Grapple","order":26,"path":"objects/obj_PushBall_Grapple/obj_PushBall_Grapple.yy",},
